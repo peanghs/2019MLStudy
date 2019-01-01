@@ -2,6 +2,7 @@ import tensorflow as tf
 
 x_data = [[1, 2, 1, 1], [2, 1, 3, 2], [3, 1, 3, 4], [4, 1, 5, 5], [1, 7, 5, 5], [1, 2, 5, 6], [1, 6, 6, 6], [1, 7, 7, 7]]
 y_data = [[0, 0, 1], [0, 0, 1], [0, 0, 1], [0, 1, 0], [0, 1, 0], [0, 1, 0], [1, 0, 0], [1, 0, 0]]
+# dic = {'0': 'A', '1': 'B', '2': 'C'}
 
 X = tf.placeholder("float", [None, 4])
 Y = tf.placeholder("float", [None, 3])
@@ -38,5 +39,5 @@ with tf.Session() as sess:
 
     all = sess.run(hypothesis, feed_dict={
                    X: [[1, 2, 3, 4], [1, 11, 7, 8], [1, 1, 0, 1]]})
-    print(all, '\n', sess.run(tf.argmax(all, 1)))
+    print(all, '\n', sess.run(tf.argmax(all, 1)))  # 딕셔너리 자료형으로 출력 내용을 바꿔보려 했으나 실패함..
     print('------다항 추정-------')
