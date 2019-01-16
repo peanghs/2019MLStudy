@@ -96,8 +96,8 @@ sess.run(init)
 ######
 timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
 writer = tf.summary.FileWriter("./logs/Mnist_CNN_log_%s/" % timestamp)
-folder = "C:/Users/PHS/PycharmProjects/ML_Basic/MyWork/logs/Mnist_CNN_log_%s/" % timestamp
-loots = "C:/Users/PHS/PycharmProjects/ML_Basic/MyWork/logs/"
+folder = "./logs/Mnist_CNN_log_%s/" % timestamp
+loots = "./logs/"
 writer.add_graph(sess.graph)
 
 batch_size = 100
